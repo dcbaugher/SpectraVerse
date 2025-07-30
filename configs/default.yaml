@@ -1,0 +1,13 @@
+defaults:
+  - override hydra/job_logging: disabled
+  - override hydra/hydra_logging: disabled
+
+training:
+  max_epochs: 5
+  batch_size: 32
+  learning_rate: 0.001
+
+logger:
+  _target_: pytorch_lightning.loggers.WandbLogger
+  project: spectraverse
+  log_model: true
